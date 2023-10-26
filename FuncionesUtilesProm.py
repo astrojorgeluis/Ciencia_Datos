@@ -171,26 +171,31 @@ def desv_estandar(datos):
     return desviacion_estandar
 
 def cuartiles(datos):
-   """
-   Calcula los cuartiles de una lista de datos.
+    """
+    Calcula los cuartiles de una lista de datos.
 
-   Parámetros
-   ----------
-   datos : list
-       Lista de números.
+    Parámetros
+    ----------
+    datos : list
+        Lista de números.
 
-   Retorna
-   ----------
-   tuple
-       Un tuple con los tres cuartiles (Q1, Q2, Q3).
-   """
-   datos.sort()
-   n = len(datos)
-   q1 = datos[n // 4]
-   q2 = datos[n // 2]
-   q3 = datos[(3 * n) // 4]
+    Retorna
+    ----------
+    tuple
+        Un tuple con los tres cuartiles (Q1, Q2, Q3).
+    """
+    datos.sort()
+    n = len(datos)
+    if n % 2 != 0:  # Si la cantidad de datos es impar
+        q1 = datos[n // 4]
+        q3 = datos[(3 * n) // 4]
+    else:  # Si la cantidad de datos es par
+        q1 = (datos[n // 4 - 1] + datos[n // 4]) / 2
+        q3 = (datos[(3 * n // 4 - 1)] + datos[(3 * n // 4)]) / 2
+    q2 = datos[n // 2]  # La mediana se mantiene igual en ambos casos
 
-   return q1, q2, q3
+    return q1, q2, q3
+
 
 def mediana_absoluta(datos):
    """
