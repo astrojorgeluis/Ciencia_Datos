@@ -213,3 +213,30 @@ def mediana_absoluta(datos):
 
    return mediana_absoluta
 
+def percentil(datos, p):
+    """
+    Calcula un percentil dado para una lista de datos.
+
+    Parámetros
+    ----------
+    datos : list
+        Lista de números.
+    p : float
+        Valor del percentil deseado (0 <= p <= 100).
+
+    Retorna
+    ----------
+    float
+        El valor del percentil en los datos.
+    """
+    datos.sort()
+    n = len(datos)
+    posicion = (p / 100) * (n - 1)
+    k = int(posicion)
+    f = posicion - k
+    if k < 0:
+        return datos[0]
+    elif k >= n - 1:
+        return datos[-1]
+    else:
+        return datos[k] + f * (datos[k + 1] - datos[k])
