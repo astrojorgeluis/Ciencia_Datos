@@ -34,10 +34,10 @@ def mediana(datos):
     datos.sort()
     n = len(datos)
     if n % 2 != 0:
-        mediana = datos[n // 2]
+        mediana = datos[n / 2]
     else:
-        izquierdo = datos[n // 2 - 1]
-        derecho = datos[n // 2]
+        izquierdo = datos[n / 2 - 1]
+        derecho = datos[n / 2]
         mediana = (izquierdo + derecho) / 2
     return mediana
 
@@ -186,9 +186,9 @@ def cuartiles(datos):
    """
    datos.sort()
    n = len(datos)
-   q1 = datos[n // 4]
-   q2 = datos[n // 2]
-   q3 = datos[(3 * n) // 4]
+   q1 = datos[n / 4]
+   q2 = datos[n / 2]
+   q3 = datos[(3 * n) / 4]
 
    return q1, q2, q3
 
@@ -209,7 +209,7 @@ def mediana_absoluta(datos):
    datos_absolutos = [abs(x) for x in datos]
    datos_absolutos.sort()
    n = len(datos_absolutos)
-   mediana_absoluta = datos_absolutos[n // 2]
+   mediana_absoluta = datos_absolutos[n / 2]
 
    return mediana_absoluta
 
