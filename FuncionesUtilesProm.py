@@ -34,10 +34,10 @@ def mediana(datos):
     datos.sort()
     n = len(datos)
     if n % 2 != 0:
-        mediana = datos[n / 2]
+        mediana = datos[n // 2]
     else:
-        izquierdo = datos[n / 2 - 1]
-        derecho = datos[n / 2]
+        izquierdo = datos[n // 2 - 1]
+        derecho = datos[n // 2]
         mediana = (izquierdo + derecho) / 2
     return mediana
 
@@ -209,7 +209,7 @@ def mediana_absoluta(datos):
    datos_absolutos = [abs(x) for x in datos]
    datos_absolutos.sort()
    n = len(datos_absolutos)
-   mediana_absoluta = datos_absolutos[n / 2]
+   mediana_absoluta = datos_absolutos[n // 2]
 
    return mediana_absoluta
 
