@@ -186,9 +186,9 @@ def cuartiles(datos):
    """
    datos.sort()
    n = len(datos)
-   q1 = datos[n / 4]
-   q2 = datos[n / 2]
-   q3 = datos[(3 * n) / 4]
+   q1 = datos[n // 4]
+   q2 = datos[n // 2]
+   q3 = datos[(3 * n) // 4]
 
    return q1, q2, q3
 
